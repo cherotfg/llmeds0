@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Required for correct iframe sizing — AEM section margins inflate shadow body */
+main > div,
+main > .section,
+main > .section:first-of-type {
+  margin: 0;
+}
+main > .section > div {
+  max-width: none;
+  padding: 0;
+}
+body {
+  overflow: auto;
+}
+
+main .get-destination-details {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 8px;
+}
+
+main .get-destination-details .detail-card {
+  display: flex;
+  flex-direction: row;
+  height: 280px;
+  max-width: 645px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+main .get-destination-details .detail-image {
+  flex: 0 0 300px;
+  height: 100%;
+  overflow: hidden;
+}
+
+main .get-destination-details .detail-content {
+  flex: 1;
+  min-width: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+main .get-destination-details .detail-chip {
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  color: inherit;
+}
+
+main .get-destination-details .detail-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: inherit;
+}
+
+main .get-destination-details .detail-desc {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  opacity: 0.78;
+  color: inherit;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+main .get-destination-details .detail-cta {
+  margin-top: auto;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+main .get-destination-details .detail-cta:hover {
+  opacity: 0.88;
+}
+
+main .get-destination-details .detail-cta:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  main .get-destination-details .detail-card {
+    height: auto;
+    flex-direction: column;
+  }
+  main .get-destination-details .detail-image {
+    flex: 0 0 160px;
+    width: 100%;
+  }
+}
+
+/* Dark theme — dim outer widget background only; card content keeps brand color. */
+@media (prefers-color-scheme: dark) {
+  main .get-destination-details { background: #111; }
+}
+body.dark main .get-destination-details { background: #111; }
